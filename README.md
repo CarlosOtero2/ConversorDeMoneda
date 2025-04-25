@@ -1,7 +1,7 @@
 # Conversor de Moneda
 
 ## Descripción
-Este proyecto es un conversor de moneda desarrollado en Java que permite realizar conversiones entre diferentes divisas utilizando la API de ExchangeRate-API. El programa ofrece una interfaz de consola sencilla para realizar conversiones entre USD, EUR, GBP y JPY.
+Este proyecto es un conversor de moneda desarrollado en Java que permite realizar conversiones entre diferentes divisas utilizando la API de ExchangeRate-API. El programa ofrece una interfaz de consola sencilla para realizar conversiones entre USD, EUR, GBP y JPY. Importante el proyecto fue desarrollado en Visual Studio Code.
 
 ## Desarrollador
 - **Nombre:** Carlos I. Otero E.
