@@ -31,13 +31,19 @@ public class Utilidades {
     public static int obtenerOpcion(Scanner scanner) {
         while (true) {
             try {
-                int opcion = scanner.nextInt();
-                scanner.nextLine(); // Consumir la nueva línea después de leer el entero
-                return opcion;
-            } catch (InputMismatchException e) {
-                System.out.println("Entrada no válida. Por favor, ingrese un número.");
-                scanner.next(); // Descarta la entrada no válida
+                // Leer la línea completa y convertirla a entero
+                String input = scanner.nextLine().trim();
+                try {
+                    int opcion = Integer.parseInt(input);
+                    return opcion;
+                } catch (NumberFormatException e) {
+                    System.out.println("Entrada no válida. Por favor, ingrese un número.");
+                    System.out.print("Ingrese la opción deseada: "); //Vuelve a preguntar
+                }
+            } catch (Exception e) {
+                System.out.println("Error al leer la entrada: " + e.getMessage());
                 System.out.print("Ingrese la opción deseada: "); //Vuelve a preguntar
+                scanner.nextLine(); // Intenta limpiar el buffer
             }
         }
     }
@@ -46,18 +52,24 @@ public class Utilidades {
     public static double obtenerCantidad(Scanner scanner) {
         while (true) {
             try {
-                double cantidad = scanner.nextDouble();
-                scanner.nextLine(); // Consume la nueva línea
-                if (cantidad < 0) {
-                    System.out.println("La cantidad debe ser un número positivo.");
-                    System.out.print("Ingrese la cantidad: ");
-                } else {
-                    return cantidad;
+                // Leer la línea completa y convertirla a double
+                String input = scanner.nextLine().trim();
+                try {
+                    double cantidad = Double.parseDouble(input);
+                    if (cantidad < 0) {
+                        System.out.println("La cantidad debe ser un número positivo.");
+                        System.out.print("Ingrese la cantidad: ");
+                    } else {
+                        return cantidad;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Entrada no válida. Por favor, ingrese un número válido.");
+                    System.out.print("Ingrese la cantidad: "); // Pide la cantidad de nuevo
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Entrada no válida. Por favor, ingrese un número válido.");
-                scanner.next(); // Descarta la entrada no válida
+            } catch (Exception e) {
+                System.out.println("Error al leer la entrada: " + e.getMessage());
                 System.out.print("Ingrese la cantidad: "); // Pide la cantidad de nuevo
+                scanner.nextLine(); // Intenta limpiar el buffer
             }
         }
     }

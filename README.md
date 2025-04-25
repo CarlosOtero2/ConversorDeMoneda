@@ -40,11 +40,26 @@ Este proyecto es un conversor de moneda desarrollado en Java que permite realiza
    ```
 
 ## Uso
-1. Ejecuta el programa:
-   ```
-   java -classpath "lib/json-20231013.jar;src" Main.ConversorDeMoneda
-   ```
+Hay varias formas de ejecutar el programa:
+
+### Usando los scripts batch (recomendado)
+1. Ejecuta el archivo `ejecutar_principal.bat` haciendo doble clic en él.
 2. Sigue las instrucciones en pantalla para realizar conversiones de moneda.
+
+### Usando la línea de comandos
+1. Abre una terminal en el directorio del proyecto.
+2. Ejecuta el programa con el siguiente comando:
+   ```
+   java -classpath ".;lib/json-20231013.jar;src" Main.ConversorDeMoneda
+   ```
+3. Sigue las instrucciones en pantalla para realizar conversiones de moneda.
+
+### Usando el archivo JAR (opcional)
+1. Crea el archivo JAR ejecutando `crear_jar.bat`.
+2. Ejecuta el JAR con `ejecutar_jar.bat` o con el siguiente comando:
+   ```
+   java -jar ConversorDeMoneda.jar
+   ```
 
 ## Estructura del proyecto
 - `src/Main/ConversorDeMoneda.java`: Clase principal que contiene el método main.
